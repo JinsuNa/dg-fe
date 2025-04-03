@@ -33,6 +33,10 @@ jobs:
           key: ${{ secrets.AWS_KEY }}
           script: |
             timedatectl set-timezone Asia/Seoul
+            # 도커 캐시 클리어
+            docker rm -f $(docker ps -aq) || true
+            docker rmi -f $(docker images -aq) || true
+            docker volume prune -f || true
             echo "S3_ACCESSKEY=${{ secrets.S3_ACCESSKEY }}" > .env
             echo "S3_SECRETKEY=${{ secrets.S3_SECRETKEY }}" >> .env
             docker pull ${{ secrets.DOCKER_USER_NAME }}/${{ secrets.DOCKER_IMAGE_NAME }}-fe
