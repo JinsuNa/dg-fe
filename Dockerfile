@@ -1,33 +1,29 @@
-worker_processes 1; # 1개의 워커 프로세스를 사용
+# Node.js를 기반으로 하는 리액트 앱 이미지
+FROM node:18 AS build
 
-events {
-    worker_connections 1024; # 각 워커 프로세스가 동시에 처리할 수 있는 최대 연결 수를 1024로 설정
-}
+# 작업 디렉토리 설정
+WORKDIR /app
 
-http {
+# 의존성 설치 및 빌드(CI)
+COPY package.json .
+RUN npm install
+COPY . .
+RUN npm run build
 
-    include /etc/nginx/mime.types;
+# Nginx를 기반으로 하는 최종 이미지
+FROM nginx:alpine
 
-    upstream backend {
-        server backend:8080; # backend : 도커컴포즈 서비스명
-    }
+# Nginx 설정 파일 복사
+COPY nginx/nginx.conf /etc/nginx/nginx.conf
 
-    server {
-        listen 80; # 클라이언트의 요청을 받을 포트 설정
+# mime.types 파일을 복사
+COPY nginx/mime.types /etc/nginx/mime.types
 
-        # 기본 루트 경로와 인덱스 파일을 설정
-        location / {
-            root /usr/share/nginx/html;
-            index index.html index.htm;
-            try_files $uri $uri/ /index.html;
-        }
+# 빌드된 리액트 앱을 Nginx의 HTML 디렉토리로 복사
+COPY --from=build /app/build /usr/share/nginx/html
 
-        # '/api/'로 시작하는 모든 요청에 대해 백엔드 서버로 프록시하도록 설정
-        location /api/ {
-            proxy_pass http://backend;
-            proxy_set_header Host $host;
-            proxy_set_header X-Real-IP $remote_addr;
-            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        }
-    }
-}
+# 포트 설정
+EXPOSE 80
+
+# Nginx 실행
+CMD ["nginx", "-g", "daemon off;"]
