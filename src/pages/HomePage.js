@@ -13,7 +13,7 @@ function HomePage() {
     const fetchTopDogs = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8080/api/match/top-liked"
+          "http://3.37.145.80:8080/api/match/top-liked"
         );
         setTopDogs(response.data);
       } catch (error) {

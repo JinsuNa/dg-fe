@@ -49,7 +49,7 @@ function ChatPage() {
     if (!chatRoomId) return;
 
     const client = new Client({
-      brokerURL: "ws://localhost:8080/ws-chat",
+      brokerURL: "ws://3.37.145.80:8080/ws-chat",
       reconnectDelay: 5000,
       onConnect: () => {
         console.log("✅ WebSocket 연결 성공");

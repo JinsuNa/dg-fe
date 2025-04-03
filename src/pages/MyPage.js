@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../styles/mypage.css";
 
-const BASE_URL = "http://localhost:8080/api/mypage";
+const BASE_URL = "http://3.37.145.80:8080/api/mypage";
 
 function MyPage() {
   const navigate = useNavigate();
@@ -74,7 +74,7 @@ function MyPage() {
 
       // 백엔드에 파일 업로드 요청
       const response = await axios.post(
-        "http://localhost:8080/api/upload",
+        "http://3.37.145.80:8080/api/upload",
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },

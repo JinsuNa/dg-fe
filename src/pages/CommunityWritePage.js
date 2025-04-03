@@ -48,7 +48,7 @@ function CommunityWritePage({ isAuthenticated }) {
 
     try {
       const response = await axios.post(
-        `http://localhost:8080/api/posts?userId=${userId}`,
+        `http://3.37.145.80:8080/api/posts?userId=${userId}`,
         formData,
         {
           headers: {

@@ -1,11 +1,11 @@
 import axios from "axios";
 
 // API 기본 URL 설정
-const API_BASE_URL = "http://localhost:8080/api/user";
+const API_BASE_URL = "http://3.37.145.80:8080/api/user";
 
 // axios 인스턴스 생성
 const api = axios.create({
-  baseURL: "http://localhost:8080/api",
+  baseURL: "http://3.37.145.80:8080/api",
   headers: {
     "Content-Type": "application/json",
   },
@@ -29,7 +29,7 @@ export const loginUser = async (formData) => {
 export const register = async (formData) => {
   try {
     const response = await axios.post(
-      "http://localhost:8080/api/user/register",
+      "http://3.37.145.80:8080/api/user/register",
       formData,
       {
         headers: {

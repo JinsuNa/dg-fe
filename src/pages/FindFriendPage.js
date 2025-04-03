@@ -7,7 +7,7 @@ import { createMatch, deleteMatch, fetchMatches, getRandomUsers } from "../utils
 import chatAPI from "../utils/chatApi";
 import { useNavigate } from "react-router-dom";
 
-const BASE_URL = "http://localhost:8080/api/match";
+const BASE_URL = "http://3.37.145.80:8080/api/match";
 
 const FindFriendPage = () => {
   const [currentProfiles, setCurrentProfiles] = useState([]);
@@ -112,7 +112,7 @@ const FindFriendPage = () => {
     try {
       // ✅ 1. senderId와 receiverId로 chatRoomId 조회
       const response = await axios.get(
-        `http://localhost:8080/api/chat/getChatRoomId`,
+        `http://3.37.145.80:8080/api/chat/getChatRoomId`,
         {
           params: { senderId: userId, receiverId },
         }

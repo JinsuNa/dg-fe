@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_BASE_URL = "http://localhost:8080/api/match";
+const API_BASE_URL = "http://3.37.145.80:8080/api/match";
 
 const getSenderId = () => {
   return localStorage.getItem("userId");

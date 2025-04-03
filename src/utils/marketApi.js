@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // API 기본 URL 설정
-const API_BASE_URL = "http://localhost:8080/api/products";
+const API_BASE_URL = "http://3.37.145.80:8080/api/products";
 
 // axios 인스턴스 생성
 const api = axios.create({
@@ -18,7 +18,7 @@ const api = axios.create({
  */
 export const createMarketPost = async (formData) => {
   try {
-      const response = await axios.post("http://localhost:8080/api/products", formData, {
+      const response = await axios.post("http://3.37.145.80:8080/api/products", formData, {
           headers: {
               "Content-Type": "multipart/form-data",
           },

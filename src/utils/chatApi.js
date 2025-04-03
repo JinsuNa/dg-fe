@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_BASE_URL = "http://localhost:8080/api/chat"; // 백엔드 API 주소
+const API_BASE_URL = "http://3.37.145.80:8080/api/chat"; // 백엔드 API 주소
 
 const chatAPI = {
     // 채팅방 생성

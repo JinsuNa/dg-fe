@@ -51,7 +51,7 @@ function EditMarketItemPage() {
 
       try {
         const response = await axios.get(
-          `http://localhost:8080/api/products/${productId}`
+          `http://3.37.145.80:8080/api/products/${productId}`
         );
         setProduct(response.data);
         setSellerId(Number(response.data.sellerId)); // ✅ 판매자 ID를 숫자로 변환
@@ -122,7 +122,7 @@ function EditMarketItemPage() {
       }
 
       const response = await axios.put(
-        `http://localhost:8080/api/products/${productId}`,
+        `http://3.37.145.80:8080/api/products/${productId}`,
         formData,
         {
           headers: {

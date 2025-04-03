@@ -28,7 +28,7 @@ function ExhibitionPage() {
     const fetchExhibitions = async () => {
       try {
         setIsLoading(true);
-        const response = await axios.get('http://localhost:8080/api/exhibitions');
+        const response = await axios.get('http://3.37.145.80:8080/api/exhibitions');
         setExhibitions(response.data);
       } catch (error) {
         console.error('박람회 데이터 가져오기 실패:', error);

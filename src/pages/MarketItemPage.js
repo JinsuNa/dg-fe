@@ -22,7 +22,7 @@ function MarketItemPage() {
     const fetchComments = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:8080/api/market-comments/${productId}`
+          `http://3.37.145.80:8080/api/market-comments/${productId}`
         );
         console.log("📦 댓글 응답 데이터:", res.data, typeof res.data);
 
@@ -51,7 +51,7 @@ function MarketItemPage() {
     if (!content) return;
 
     try {
-      await axios.post("http://localhost:8080/api/market-comments", {
+      await axios.post("http://3.37.145.80:8080/api/market-comments", {
         productId,
         userId: Number(userId),
         content,
@@ -60,7 +60,7 @@ function MarketItemPage() {
       setNewComment("");
 
       const res = await axios.get(
-        `http://localhost:8080/api/market-comments/${productId}`
+        `http://3.37.145.80:8080/api/market-comments/${productId}`
       );
 
       let parsed = res.data;
@@ -93,7 +93,7 @@ function MarketItemPage() {
   
     try {
       // ✅ 댓글 삭제 API 호출로 수정
-      await axios.delete(`http://localhost:8080/api/market-comments/${commentId}`, {
+      await axios.delete(`http://3.37.145.80:8080/api/market-comments/${commentId}`, {
         params: { userId: Number(userId) },
       });
   
@@ -118,7 +118,7 @@ function MarketItemPage() {
         console.log(`Fetching product with ID: ${productId}`);
 
         const response = await axios.get(
-          `http://localhost:8080/api/products/${productId}`
+          `http://3.37.145.80:8080/api/products/${productId}`
         );
 
         setProduct(response.data);
@@ -173,7 +173,7 @@ function MarketItemPage() {
     if (!window.confirm("정말로 이 게시글을 삭제하시겠습니까?")) return; // ✅ 삭제 확인창
 
     try {
-      await axios.delete(`http://localhost:8080/api/products/${product.id}`, {
+      await axios.delete(`http://3.37.145.80:8080/api/products/${product.id}`, {
         params: { userId },
       });
 

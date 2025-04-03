@@ -67,7 +67,7 @@ function MarketWritePage() {
 
     try {
       const response = await axios.post(
-        "http://localhost:8080/api/products",
+        "http://3.37.145.80:8080/api/products",
         data,
         {
           headers: { "Content-Type": "multipart/form-data" },

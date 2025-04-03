@@ -27,7 +27,7 @@ function CommunityPage() {
     const fetchPosts = async () => {
       try {
         setIsLoading(true);
-        const response = await axios.get('http://localhost:8080/api/posts');
+        const response = await axios.get('http://3.37.145.80:8080/api/posts');
 
         console.log('전체 게시글 응답:', response);
         const rawPosts = response.data;

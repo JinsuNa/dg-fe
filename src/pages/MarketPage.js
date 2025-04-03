@@ -27,7 +27,7 @@ function MarketPage() {
   });
 
   useEffect(() => {
-    fetch("http://localhost:8080/api/products")
+    fetch("http://3.37.145.80:8080/api/products")
       .then((response) => {
         if (!response.ok) {
           throw new Error("상품 목록을 불러오는 데 실패했습니다.");
@@ -57,13 +57,13 @@ function MarketPage() {
       try {
         // 🔥 제품 정보 가져오기
         const response = await fetch(
-          `http://localhost:8080/api/products/${product?.id}`
+          `http://3.37.145.80:8080/api/products/${product?.id}`
         );
         const data = await response.json();
         setProduct(data);
 
         // 🎯 조회수 증가 API 별도 호출 (필요한 경우)
-        await fetch(`http://localhost:8080/api/products/${product?.id}/views`, {
+        await fetch(`http://3.37.145.80:8080/api/products/${product?.id}/views`, {
           method: "POST", // 혹은 "PATCH" (서버 요구 사항에 맞게)
         });
       } catch (error) {
@@ -105,7 +105,7 @@ function MarketPage() {
     }
     return imagePath.startsWith("http")
       ? imagePath
-      : `http://localhost:8080${imagePath}`;
+      : `http://3.37.145.80:8080${imagePath}`;
   };
 
   // 페이지네이션 로직
