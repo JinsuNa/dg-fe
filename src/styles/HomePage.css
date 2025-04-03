@@ -1,0 +1,253 @@
+/* 홈페이지 스타일 */
+
+/* 히어로 섹션 */
+.hero-section {
+  width: 100%;
+  padding: 3rem 0 4rem;
+  background: linear-gradient(to bottom, #fff1f6, #ffffff);
+  text-align: center;
+}
+
+.hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.hero-description {
+  font-size: 1.125rem;
+  color: var(--muted-foreground-color);
+  margin-bottom: 2rem;
+  max-width: 700px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+/* 인기 강아지 섹션 */
+.top-dogs-section {
+  width: 100%;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.section-description {
+  font-size: 1.125rem;
+  color: var(--muted-foreground-color);
+  margin-bottom: 3rem;
+  text-align: center;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.top-dogs-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.top-dogs-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.dog-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.dog-image-container {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.dog-rank {
+  position: absolute;
+  top: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 9999px;
+  padding: 0.25rem 0.75rem;
+  font-weight: bold;
+  font-size: 0.875rem;
+}
+
+.dog-image {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.dog-image.first {
+  width: 300px;
+  height: 300px;
+  border: 8px solid var(--primary-color);
+}
+
+.dog-image.second,
+.dog-image.third {
+  width: 250px;
+  height: 250px;
+  border: 4px solid var(--secondary-color);
+}
+
+.dog-name {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.dog-info {
+  font-size: 0.875rem;
+  color: var(--muted-foreground-color);
+}
+
+/* 소개 섹션 */
+.intro-section {
+  width: 100%;
+  padding: 4rem 0;
+  background-color: rgba(245, 245, 245, 0.5);
+}
+
+.intro-text {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  background-color: var(--background-color);
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  padding: 1.5rem;
+  transition: box-shadow 0.3s, transform 0.3s;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.feature-card:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+}
+
+.feature-icon-container {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 9999px;
+  background-color: rgba(229, 56, 128, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.feature-icon {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+}
+
+.feature-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.feature-description {
+  color: var(--muted-foreground-color);
+  font-size: 0.875rem;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .top-dogs-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.75rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .section-description {
+    font-size: 1rem;
+  }
+
+  .dog-image.first {
+    width: 200px;
+    height: 200px;
+  }
+
+  .dog-image.second,
+  .dog-image.third {
+    width: 150px;
+    height: 150px;
+  }
+}
+

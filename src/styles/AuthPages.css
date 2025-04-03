@@ -1,0 +1,406 @@
+/* 인증 페이지 공통 스타일 */
+.auth-page {
+  min-height: calc(100vh - 8rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.auth-container {
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+/* 테스트 계정 정보 박스 */
+.test-accounts {
+  background-color: var(--muted-color);
+  border-radius: var(--radius);
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  width: 100%;
+  max-width: 450px;
+}
+
+.test-accounts-title {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.test-accounts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.test-account-card {
+  background-color: var(--background-color);
+  padding: 0.75rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+}
+
+.test-account-type {
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--primary-color);
+  margin-bottom: 0.25rem;
+}
+
+.test-account-info {
+  font-size: 0.75rem;
+  color: var(--muted-foreground-color);
+  margin-top: 0.25rem;
+}
+
+/* 탭 스타일 */
+.auth-tabs {
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.auth-tabs-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.auth-tab {
+  padding: 0.75rem;
+  text-align: center;
+  border-radius: var(--radius);
+  font-weight: 500;
+  cursor: pointer;
+  background-color: var(--background-color);
+  border: 1px solid var(--border-color);
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.auth-tab.active {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.auth-tab-content {
+  display: none;
+}
+
+.auth-tab-content.active {
+  display: block;
+}
+
+/* 카드 스타일 */
+.auth-card {
+  background-color: var(--background-color);
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.auth-card-header {
+  padding: 1.5rem 1.5rem 0.5rem;
+}
+
+.auth-card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.auth-card-description {
+  color: var(--muted-foreground-color);
+  font-size: 0.875rem;
+}
+
+.auth-card-content {
+  padding: 1rem 1.5rem;
+}
+
+.auth-card-footer {
+  padding: 1rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 폼 스타일 */
+.auth-form {
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.625rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  font-size: 0.875rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(229, 56, 128, 0.2);
+}
+
+.form-input.error {
+  border-color: #e11d48;
+}
+
+.form-input.valid {
+  border-color: #10b981;
+}
+
+.form-error {
+  color: #e11d48;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.form-success {
+  color: #10b981;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.form-hint {
+  color: var(--muted-foreground-color);
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+/* 버튼 스타일 */
+.auth-button {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: var(--radius);
+  font-weight: 500;
+  font-size: 0.875rem;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.auth-button-primary {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+}
+
+.auth-button-primary:hover {
+  background-color: var(--primary-hover-color);
+}
+
+.auth-button-primary:disabled {
+  background-color: var(--muted-color);
+  cursor: not-allowed;
+}
+
+.auth-button-outline {
+  background-color: transparent;
+  color: var(--foreground-color);
+  border: 1px solid var(--border-color);
+}
+
+.auth-button-outline:hover {
+  background-color: var(--secondary-color);
+}
+
+.auth-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: text-decoration 0.2s;
+}
+
+.auth-link:hover {
+  text-decoration: underline;
+}
+
+.auth-footer-text {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--muted-foreground-color);
+}
+
+/* 주소 검색 관련 스타일 */
+.address-input-group {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.address-input-group .form-input {
+  flex: 1;
+}
+
+.address-search-button {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.625rem 0.75rem;
+  border-radius: var(--radius);
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  font-size: 0.875rem;
+  transition: background-color 0.2s;
+}
+
+.address-search-button:hover {
+  background-color: var(--secondary-color);
+}
+
+/* 프로필 이미지 업로드 스타일 */
+.profile-upload {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.profile-image-preview {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--muted-color);
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-placeholder {
+  color: var(--muted-foreground-color);
+  font-size: 1.5rem;
+}
+
+.profile-upload-input {
+  flex: 1;
+}
+
+.profile-upload-hint {
+  font-size: 0.75rem;
+  color: var(--muted-foreground-color);
+  margin-top: 0.25rem;
+}
+
+/* 반려견 정보 섹션 */
+.pet-info-section {
+  border-top: 1px solid var(--border-color);
+  padding-top: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.pet-info-title {
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+/* 알림 스타일 */
+.auth-alert {
+  border-radius: var(--radius);
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+}
+
+.auth-alert-error {
+  background-color: #fef2f2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+}
+
+.auth-alert-success {
+  background-color: #ecfdf5;
+  color: #047857;
+  border: 1px solid #a7f3d0;
+}
+
+/* 체크박스 스타일 */
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.checkbox-input {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 0.25rem;
+  border: 1px solid var(--border-color);
+  appearance: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.checkbox-input:checked {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.checkbox-input:checked::after {
+  content: "";
+  position: absolute;
+  left: 0.25rem;
+  top: 0.125rem;
+  width: 0.375rem;
+  height: 0.625rem;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.checkbox-label {
+  font-size: 0.875rem;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 480px) {
+  .form-row {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .profile-upload {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-upload-input {
+    width: 100%;
+  }
+}
+

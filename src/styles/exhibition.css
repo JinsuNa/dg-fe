@@ -1,0 +1,140 @@
+/* 커뮤니티 및 마켓 공통 스타일 */
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.page-title {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.page-description {
+  color: var(--muted-foreground-color);
+  margin-bottom: 2rem;
+  max-width: 700px;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+/* 박람회 페이지 스타일 */
+.exhibition-image-container {
+  position: relative;
+  width: 100%;
+  height: 25rem; /* 높이를 고정 */
+  overflow: hidden;
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+}
+
+.exhibition-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain; /* 이미지가 잘리지 않고, 비율 유지 */
+  aspect-ratio: 4 / 5; /* ✅ 이미지 비율을 4:5로 고정 */
+}
+
+.exhibition-image-container .badge {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+}
+
+.exhibition-meta {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.exhibition-location {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--muted-foreground-color);
+}
+
+.exhibition-location-icon {
+  font-size: 1rem;
+}
+
+/* 카드 스타일 */
+.exhibition-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.exhibition-card {
+  background-color: var(--background-color) !important;
+  border-radius: var(--radius) !important;
+  border: 1px solid var(--border-color) !important;
+  overflow: hidden !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05)!important;
+  margin-bottom: 2rem!important;
+}
+
+.exhibition-card-header {
+  padding: 1.25rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.exhibition-card-content {
+  padding: 1.5rem;
+}
+
+.exhibition-card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.exhibition-card-title a {
+  color: var(--foreground-color);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.exhibition-card-title a:hover {
+  color: var(--primary-color);
+}
+
+.exhibition-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--muted-foreground-color);
+}
+
+.exhibition-card-description {
+  margin-bottom: 1rem;
+  color: var(--foreground-color);
+  line-height: 1.5;
+}
+
+.exhibition-card-footer {
+  padding: 1.25rem;
+  border-top: 1px solid var(--border-color);
+  background-color: rgba(0, 0, 0, 0.01);
+}
+
+@media (max-width: 1024px) {
+  .exhibition-card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .exhibition-card-grid {
+    grid-template-columns: 1fr;
+  }
+}

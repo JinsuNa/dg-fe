@@ -1,0 +1,14 @@
+.market-write-container{
+  max-width: 800px !important;
+  margin: auto !important;
+}
+
+.preview{
+  width: 50% !important;
+}
+
+.btn_flex{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

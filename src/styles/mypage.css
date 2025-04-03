@@ -1,0 +1,203 @@
+/* 🌟 마이페이지 전체 컨테이너 */
+.mypage-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* 🌟 마이페이지 헤더 */
+.mypage-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.mypage-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+/* 🌟 마이페이지 콘텐츠 영역 */
+.mypage-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+/* 반응형: 태블릿 이상 */
+@media (min-width: 768px) {
+  .mypage-content {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* 🌟 카드 스타일 */
+.card {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: 100%;
+}
+
+/* 🌟 카드 제목 */
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #e53880;
+  text-align: center;
+}
+
+/* 🌟 프로필 섹션 */
+.profile-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* 🌟 프로필 이미지 */
+.profile-image-container {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  border: 3px solid #ddd;
+}
+
+.profile-image {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+}
+
+/* 🌟 반려견 섹션 */
+.pet-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* 🌟 입력 필드 */
+label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #555;
+  display: block;
+  margin-bottom: 0.25rem;
+  text-align: left;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+input:focus,
+select:focus {
+  border-color: #e53880;
+  outline: none;
+  box-shadow: 0px 0px 6px rgba(229, 56, 128, 0.2);
+}
+
+/* 파일 업로드 입력 필드 */
+input[type="file"] {
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  border: 1px dashed #ddd;
+  background-color: #f9f9f9;
+}
+
+/* 🌟 버튼 스타일 */
+.btn-save {
+  width: 100%;
+  padding: 0.75rem;
+  background: #e53880;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+  margin-top: 0.5rem;
+}
+
+.btn-save:hover {
+  background: #d32b70;
+}
+
+.btn-save:disabled {
+  background: #ddd;
+  cursor: not-allowed;
+}
+
+/* 🌟 로딩 상태 */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+/* 추가 반응형 스타일 */
+@media (max-width: 480px) {
+  .mypage-container {
+    padding: 1rem;
+    margin: 1rem;
+  }
+
+  .mypage-title {
+    font-size: 1.5rem;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  .profile-image-container {
+    width: 100px;
+    height: 100px;
+  }
+
+  .card-title {
+    font-size: 1.25rem;
+  }
+
+  input,
+  select,
+  .btn-save {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+}
+
+/* 큰 화면에서의 최대 너비 제한 */
+@media (min-width: 1400px) {
+  .mypage-container {
+    max-width: 1200px;
+  }
+}
+

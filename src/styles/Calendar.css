@@ -1,0 +1,491 @@
+/* 캘린더 페이지 스타일 */
+.calendar-page {
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.calendar-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .calendar-container {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+/* 캘린더 카드 스타일 */
+.calendar-card {
+  background-color: var(--background-color);
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  height: 100%;
+}
+
+.calendar-card-header {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.calendar-card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.calendar-card-description {
+  color: var(--muted-foreground-color);
+  font-size: 0.875rem;
+  margin: 0.25rem 0 0 0;
+}
+
+.calendar-card-content {
+  padding: 1rem;
+}
+
+/* 캘린더 스타일 업데이트 */
+.calendar {
+  width: 100%;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.calendar-nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.calendar-nav h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.calendar-nav button {
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  color: #666;
+}
+
+.calendar-view-options {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.calendar-view-options button {
+  padding: 0.5rem 1rem;
+  border: 1px solid #e53880;
+  border-radius: 6px;
+  background: white;
+  color: #e53880;
+  cursor: pointer;
+}
+
+.calendar-view-options button.active {
+  background: #e53880;
+  color: white;
+}
+
+.calendar-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.calendar-table th {
+  padding: 1rem;
+  font-weight: 500;
+  color: #666;
+  border-bottom: 1px solid #eee;
+}
+
+.calendar-day {
+  height: 120px; 
+  padding: 8px;
+  border: 1px solid #eee;
+  vertical-align: top;
+  position: relative;
+  overflow: hidden; 
+}
+
+.calendar-events {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 4px;
+  max-height: calc(100% - 30px); 
+  overflow: hidden; 
+}
+
+.calendar-event-dot {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  height: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0;
+  color: #333;
+  line-height: 1;
+}
+
+.calendar-event-dot::before {
+  content: "";
+  display: block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #e53880;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.event-time {
+  font-weight: normal;
+  flex-shrink: 0;
+  margin-right: 4px;
+}
+
+.event-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #666;
+  flex: 1;
+}
+
+.calendar-day.other-month {
+  background: #fafafa;
+}
+
+.calendar-day.other-month .calendar-day-number {
+  color: #999;
+}
+
+.calendar-day.selected {
+  background: #fff1f6;
+}
+
+.calendar-day.today .calendar-day-number {
+  color: #e53880;
+  font-weight: 600;
+}
+
+/* 캘린더 테이블 스타일 (기존 스타일 삭제) */
+
+/* 캘린더 헤더 스타일 (기존 스타일 삭제) */
+
+/* 캘린더 제목 스타일 (기존 스타일 삭제) */
+
+/* 캘린더 네비게이션 스타일 (기존 스타일 삭제) */
+
+/* 캘린더 네비게이션 버튼 스타일 (기존 스타일 삭제) */
+
+/* 캘린더 테이블 스타일 (기존 스타일 삭제) */
+
+/* 캘린더 테이블 헤더 스타일 (기존 스타일 삭제) */
+
+/* 캘린더 테이블 셀 스타일 (기존 스타일 삭제) */
+
+/* 캘린더 날짜 스타일 (기존 스타일 삭제) */
+
+/* 캘린더 날짜 숫자 스타일 (기존 스타일 삭제) */
+
+/* 오늘 날짜 스타일 (기존 스타일 삭제) */
+
+/* 다른 달 날짜 스타일 (기존 스타일 삭제) */
+
+/* 선택된 날짜 스타일 (기존 스타일 삭제) */
+
+/* 캘린더 이벤트 스타일 (기존 스타일 삭제) */
+
+/* 일요일 색상 */
+.calendar-table th:first-child,
+.calendar-table td:first-child .calendar-day-number {
+  color: #ff0000;
+}
+
+/* 토요일 색상 */
+.calendar-table th:last-child,
+.calendar-table td:last-child .calendar-day-number {
+  color: #e53880;
+}
+
+/* 사이드바 스타일 */
+.sidebar-card {
+  height: 100%;
+}
+
+.sidebar-tabs {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.sidebar-tabs-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.sidebar-tab {
+  padding: 0.75rem;
+  text-align: center;
+  font-weight: 500;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+
+.sidebar-tab.active {
+  color: var(--primary-color);
+  border-bottom-color: var(--primary-color);
+}
+
+.sidebar-tab-content {
+  display: none;
+  padding: 1rem;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.sidebar-tab-content.active {
+  display: block;
+}
+
+/* 일정 목록 스타일 */
+.event-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.event-item {
+  padding: 1rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  transition: background-color 0.2s;
+}
+
+.event-item:hover {
+  background-color: var(--secondary-color);
+}
+
+.event-title {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.event-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+  color: var(--muted-foreground-color);
+}
+
+.event-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.event-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.5rem;
+}
+
+/* 할 일 목록 스타일 */
+.todo-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.todo-input {
+  flex: 1;
+}
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+}
+
+.todo-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.todo-checkbox {
+  appearance: none;
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.25rem;
+  cursor: pointer;
+  position: relative;
+}
+
+.todo-checkbox:checked {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.todo-checkbox:checked::after {
+  content: "";
+  position: absolute;
+  left: 0.25rem;
+  top: 0.125rem;
+  width: 0.375rem;
+  height: 0.625rem;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.todo-text {
+  flex: 1;
+  margin-left: 0.5rem;
+}
+
+.todo-text.completed {
+  text-decoration: line-through;
+  color: var(--muted-foreground-color);
+}
+
+.todo-delete {
+  background: none;
+  border: none;
+  color: var(--muted-foreground-color);
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* 일정 추가 모달 스타일 */
+.event-form-group {
+  margin-bottom: 1rem;
+}
+
+.event-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+  .event-form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 이벤트 상세 패널 스타일 업데이트 */
+.event-details {
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.event-details-header {
+  margin-bottom: 1.5rem;
+}
+
+.event-details-date {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.event-details-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.event-details-item {
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+.event-details-time {
+  color: #e53880;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.event-details-location {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #666;
+  font-size: 0.875rem;
+}
+
+.event-details-attendee {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #666;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+.event-details-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.event-details-actions button {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: none;
+  background: #e53880;
+  color: white;
+  cursor: pointer;
+}
+
+
+.calendar-table td {
+  width: calc(100% / 7);
+  height: 120px;
+  padding: 0;
+  vertical-align: top;
+}
+

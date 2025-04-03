@@ -1,0 +1,168 @@
+/* 기본 CSS 리셋 및 전역 스타일 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 기본 폰트 및 색상 설정 */
+:root {
+  /* 색상 변수 정의 */
+  --background-color: #ffffff;
+  --foreground-color: #0a0a0a;
+  --primary-color: #e53880; /* 핑크색 계열의 주 색상 */
+  --primary-hover-color: #d32e73;
+  --secondary-color: #f5f5f5;
+  --secondary-hover-color: #e8e8e8;
+  --muted-color: #f5f5f5;
+  --muted-foreground-color: #757575;
+  --accent-color: #f5f5f5;
+  --accent-foreground-color: #1a1a1a;
+  --border-color: #e5e5e5;
+  --input-color: #e5e5e5;
+  --ring-color: #e53880;
+  --radius: 0.5rem;
+
+  /* 다크 모드를 위한 변수 (나중에 구현) */
+  --dark-background-color: #0a0a0a;
+  --dark-foreground-color: #f9f9f9;
+  /* 추가 다크 모드 변수들... */
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background-color);
+  color: var(--foreground-color);
+  line-height: 1.5;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+/* 기본 링크 스타일 */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 기본 버튼 스타일 */
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+/* 기본 입력 필드 스타일 */
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+/* 이미지 기본 스타일 */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 컨테이너 클래스 */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* 유틸리티 클래스 */
+.text-center {
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.rounded {
+  border-radius: var(--radius);
+}
+
+.border {
+  border: 1px solid var(--border-color);
+}
+
+.p-2 {
+  padding: 0.5rem;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+.m-2 {
+  margin: 0.5rem;
+}
+
+.m-4 {
+  margin: 1rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+/* 반응형 미디어 쿼리 */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 0.5rem;
+  }
+}
+
