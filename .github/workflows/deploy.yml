@@ -1,4 +1,4 @@
-name: 백엔드 배포
+name: 프론트엔드 배포
 
 on:
   push:
@@ -12,31 +12,19 @@ jobs:
       - name: 체크아웃
         uses: actions/checkout@v3
 
-      - name: JDK 17 사용
-        uses: actions/setup-java@v3
-        with:
-          java-version: '17'
-          distribution: 'temurin'
-
-      - name: Gradle Wrapper 실행 권한 추가
-        run: chmod +x gradlew
-
-      - name: Gradle로 빌드(CI)
-        run: ./gradlew build -x test
-
       - name: 도커허브에 로그인
         uses: docker/login-action@v1
         with:
           username: ${{ secrets.DOCKER_USER_NAME }}
           password: ${{ secrets.DOCKER_USER_PW }}
 
-      - name: 백엔드 이미지 빌드
-        run: docker build -t ${{ secrets.DOCKER_USER_NAME }}/${{ secrets.DOCKER_IMAGE_NAME }}-be .
+      - name: 프론트 이미지 빌드
+        run: docker build -t ${{ secrets.DOCKER_USER_NAME }}/${{ secrets.DOCKER_IMAGE_NAME }}-fe .
 
       - name: 이미지 푸시
-        run: docker push ${{ secrets.DOCKER_USER_NAME }}/${{ secrets.DOCKER_IMAGE_NAME }}-be
+        run: docker push ${{ secrets.DOCKER_USER_NAME }}/${{ secrets.DOCKER_IMAGE_NAME }}-fe
 
-      - name: AWS EC2에 ssh 접속 후 백엔드 배포
+      - name: AWS EC2에 ssh 접속 후 프론트 배포
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.AWS_IP }}
@@ -47,5 +35,5 @@ jobs:
             timedatectl set-timezone Asia/Seoul
             echo "S3_ACCESSKEY=${{ secrets.S3_ACCESSKEY }}" > .env
             echo "S3_SECRETKEY=${{ secrets.S3_SECRETKEY }}" >> .env
-            docker pull ${{ secrets.DOCKER_USER_NAME }}/${{ secrets.DOCKER_IMAGE_NAME }}-be
+            docker pull ${{ secrets.DOCKER_USER_NAME }}/${{ secrets.DOCKER_IMAGE_NAME }}-fe
             docker-compose up -d --force-recreate
