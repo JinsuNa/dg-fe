@@ -38,7 +38,8 @@ function MarketWritePage() {
     }
   };
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     if (!formData.title || !formData.price || !formData.description) {
       setError("모든 필드를 입력해주세요.");
       return;
